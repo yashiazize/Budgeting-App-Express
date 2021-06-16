@@ -16,7 +16,7 @@ transactions.get("/", (req, res) => {
 
 transactions.post("/", (req, res) => {
     const { body } = req;
-    transactionsArray.push(req.body)
+    transactionsArray.push(body)
     res.json(transactionsArray[transactionsArray.length - 1])
 })
 
