@@ -20,4 +20,23 @@ transactions.post("/", (req, res) => {
     res.json(transactionsArray[transactionsArray.length - 1])
 })
 
+transactions.put("/:id", (req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+    if (transactionsArray[id]) {
+        transactionsArray = body;
+        res.json(transactionsArray[id])
+    } else {
+        res.redirect("*")
+    }
+ })
+
+ transactions.delete("/:id", (req, res) => {
+     const { id } = req.params;
+     if (transactionsArray[id]) {
+         const deletedTransaction = transactionsArray.splice(id, 1)
+         res.json(deletedTransaction)
+     }
+ })
+ 
 module.exports = transactions;
