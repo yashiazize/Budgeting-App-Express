@@ -35,7 +35,7 @@ transactions.put("/:id", (req, res) => {
      const { id } = req.params;
      if (transactionsArray[id]) {
          const deletedTransaction = transactionsArray.splice(id, 1)
-         res.json(deletedTransaction)
+         res.json(deletedTransaction[0])
      }
  })
  
