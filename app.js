@@ -3,6 +3,12 @@ const transactionsController = require("./controllers/transactions");
 const cors = require("cors");
 
 const app = express();
+
+app.use((req, res, next) => {
+  console.log("This code runs for every request");
+  next();
+})
+
 app.use(express.json());
 app.use(cors());
 
