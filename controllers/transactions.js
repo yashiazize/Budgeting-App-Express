@@ -24,7 +24,7 @@ transactions.put("/:id", (req, res) => {
     const { id } = req.params;
     const { body } = req;
     if (transactionsArray[id]) {
-        transactionsArray = body;
+        transactionsArray[id] = body;
         res.json(transactionsArray[id])
     } else {
         res.redirect("*")
