@@ -65,4 +65,10 @@ module.exports = [
     name: "Map of Mansion",
     amount: -505,
   },
+  {
+    from: "Uber",
+    date: "April 2",
+    name: "Monthly Payout",
+    amount: 5500,
+  },
 ];
